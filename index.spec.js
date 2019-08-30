@@ -93,6 +93,7 @@ for (let i = 0; i < 3; i++) {
         const startTime = performance.now();
         const cipher = implementations[i];
 
+        cipher('The quick brown fox jumps over the lazy dog', 10);
 
         const endTime = performance.now();
         const timeDiff = (endTime - startTime) / 1000;

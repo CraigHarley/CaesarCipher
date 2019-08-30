@@ -60,8 +60,6 @@ export const craig = (i, incBy) => {
 };
 
 
-
-
 export const dragon = (string, number) => {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -90,37 +88,32 @@ export const dragon = (string, number) => {
 };
 
 export const matt = (txt, inc) => {
-    function x(txt, inc) {
-        let lc = 'abcdefghijklmnopqrstuvwxyz'.split('');
-        let uc = lc.join('').toUpperCase().split('');
+    let lc = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    let uc = lc.join('').toUpperCase().split('');
 
-        let fin = [];
-        for (var i = 0; i < txt.length; i++) {
-            if (lc.includes(txt[i]) || uc.includes(txt[i])) {
-                let char = txt[i].charCodeAt();
-                if (char < 91) {
-                    while (char + inc < 65) {
-                        char = char + 26;
-                    }
-                    while (char + inc > 90) {
-                        char = char - 26;
-                    }
-                } else {
-                    while (char + inc < 97) {
-                        char = char + 26;
-                    }
+    let fin = [];
+    for (var i = 0; i < txt.length; i++) {
+        if (lc.includes(txt[i]) || uc.includes(txt[i])) {
+            let char = txt[i].charCodeAt();
+            if (char < 91) {
+                while (char + inc < 65) {
+                    char = char + 26;
                 }
-                while (char + inc > 122) {
+                while (char + inc > 90) {
                     char = char - 26;
                 }
-                let tmp = String.fromCharCode(char + inc);
-                fin[i] = tmp;
             } else {
-                fin[i] = txt[i];
+                while (char + inc < 97) {
+                    char = char + 26;
+                }
             }
+            while (char + inc > 122) {
+                char = char - 26;
+            }
+            fin[i] = String.fromCharCode(char + inc);
+        } else {
+            fin[i] = txt[i];
         }
-        return fin.join('');
-    };
-
-    return x(txt, inc);
+    }
+    return fin.join('');
 };
