@@ -18,17 +18,17 @@ export const craig = (i, incBy) => {
                 }
 
                 // get character as an ascii number
-                let charCode = start.charCodeAt(0);
+                const charCode = start.charCodeAt(0);
                 let moveTo = charCode + incBy;
 
                 // alias the function to make it shorter
-                let s = String.fromCharCode;
+                const s = String.fromCharCode;
 
                 // ascii number boundaries
-                let A = 65;
-                let Z = 90;
-                let a = 97;
-                let z = 122;
+                const A = 65;
+                const Z = 90;
+                const a = 97;
+                const z = 122;
 
                 // catch anything that's not an english letter
                 if (!start.match(/^[a-zA-Z]$/)) {
